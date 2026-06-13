@@ -22,6 +22,7 @@
       <a href="#skills">Навыки</a>
       <a href="#directions">Направления</a>
       <a href="#projects">Проекты</a>
+      <a href="#music">AI-музыка</a>
       <a href="#contact">Контакты</a>
     </nav>
   </header>
@@ -29,6 +30,20 @@
   <main>
     <!-- 1. Главный экран -->
     <section id="hero" class="hero">
+      <div class="hero__visual">
+        <div class="hero-photo">
+          <div class="hero-photo__glow" aria-hidden="true"></div>
+          <div class="hero-photo__frame">
+            <img
+              src="images/hero-photo.png"
+              alt="Екатерина Демидович — AI-креатор"
+              class="hero-photo__img"
+              width="360"
+              height="360"
+            >
+          </div>
+        </div>
+      </div>
       <div class="hero__content">
         <p class="hero__badge">
           <span class="hero__badge-dot"></span>
@@ -43,20 +58,6 @@
         <div class="hero__actions">
           <a href="#projects" class="btn btn--primary">Посмотреть проекты</a>
           <a href="#contact" class="btn btn--outline">Связаться со мной</a>
-        </div>
-      </div>
-      <div class="hero__visual">
-        <div class="hero-photo">
-          <div class="hero-photo__glow" aria-hidden="true"></div>
-          <div class="hero-photo__frame">
-            <img
-              src="images/hero-photo.png"
-              alt="Екатерина Демидович — AI-креатор"
-              class="hero-photo__img"
-              width="360"
-              height="360"
-            >
-          </div>
         </div>
       </div>
     </section>
@@ -101,6 +102,7 @@
         <span class="skill-tag">Контент-планы</span>
         <span class="skill-tag skill-tag--en">ChatGPT & Gemini</span>
         <span class="skill-tag skill-tag--en">Kling • Veo • Suno</span>
+        <span class="skill-tag">Генерация музыки</span>
         <span class="skill-tag">Вайб-кодинг</span>
         <span class="skill-tag">Креативные концепции</span>
         <span class="skill-tag">Визуальное мышление</span>
@@ -129,6 +131,11 @@
           <h3>Контент и идеи</h3>
           <p>Контент-планы, тексты и креативные концепции на стыке AI и креатива</p>
         </article>
+        <article class="direction-card">
+          <div class="direction-card__icon">♫</div>
+          <h3>AI-музыка</h3>
+          <p>Музыкальные концепции, песни и саунд-дизайн, созданные с помощью нейросетей</p>
+        </article>
       </div>
     </section>
 
@@ -138,38 +145,92 @@
         <span class="section__label">04</span>
         <h2 class="section__title">Проекты</h2>
       </div>
-      <div class="projects-grid">
-        <article class="project-card">
-          <div class="project-card__preview project-card__preview--1"></div>
-          <div class="project-card__body">
-            <h3>AI-визуалы</h3>
-            <p>Серия визуальных экспериментов и AI-образов</p>
-            <button class="btn btn--soon" disabled>Скоро</button>
+
+      <div class="projects-tabs" role="tablist" aria-label="Категории проектов">
+        <button class="projects-tab projects-tab--active" role="tab" aria-selected="true" data-tab="visuals">AI-визуалы</button>
+        <button class="projects-tab" role="tab" aria-selected="false" data-tab="video">AI-видео</button>
+        <button class="projects-tab" role="tab" aria-selected="false" data-tab="music">AI-музыка</button>
+      </div>
+
+      <div class="projects-panel projects-panel--active" id="panel-visuals" role="tabpanel">
+        <p class="projects-panel__desc">Серия визуальных экспериментов и AI-образов, созданных с помощью нейросетей</p>
+        <div class="gallery gallery--visuals">
+          <figure class="gallery__item">
+            <img src="media/images/visual-forest.png" alt="AI-визуал: волшебный лес" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="media/images/visual-greenhouse.png" alt="AI-визуал: тюльпаны в теплице" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="media/images/visual-winter.png" alt="AI-визуал: зимняя сказка" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="media/images/visual-chainsaw.png" alt="AI-визуал: готический портрет" loading="lazy">
+          </figure>
+          <figure class="gallery__item gallery__item--video">
+            <video src="media/videos/0315.mp4" controls preload="metadata" poster="media/images/visual-forest.png"></video>
+          </figure>
+        </div>
+      </div>
+
+      <div class="projects-panel" id="panel-video" role="tabpanel" hidden>
+        <p class="projects-panel__desc">Видеопроекты и motion-концепции, созданные с помощью нейросетей</p>
+        <div class="gallery gallery--video">
+          <figure class="gallery__item gallery__item--video">
+            <video src="media/videos/0305.mp4" controls preload="metadata"></video>
+            <figcaption>AI-видео 0305</figcaption>
+          </figure>
+          <figure class="gallery__item gallery__item--video">
+            <video src="media/videos/0126.mp4" controls preload="metadata"></video>
+            <figcaption>AI-видео 0126</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="projects-panel" id="panel-music" role="tabpanel" hidden>
+        <p class="projects-panel__desc">Музыкальные работы, созданные с помощью AI-инструментов</p>
+        <div class="music-player">
+          <div class="music-player__cover" aria-hidden="true">♫</div>
+          <div class="music-player__info">
+            <h3 class="music-player__title">Жил-был дракон — не страшный, не злой</h3>
+            <p class="music-player__meta">AI-музыка • Suno</p>
+            <audio class="music-player__audio" controls preload="metadata">
+              <source src="media/audio/dragon-song.mp3" type="audio/mpeg">
+            </audio>
           </div>
-        </article>
-        <article class="project-card">
-          <div class="project-card__preview project-card__preview--2"></div>
-          <div class="project-card__body">
-            <h3>AI-видео</h3>
-            <p>Видеопроекты и motion-концепции с нейросетями</p>
-            <button class="btn btn--soon" disabled>Скоро</button>
-          </div>
-        </article>
-        <article class="project-card">
-          <div class="project-card__preview project-card__preview--3"></div>
-          <div class="project-card__body">
-            <h3>Контент-план с AI</h3>
-            <p>Стратегия контента и идеи, созданные с помощью AI</p>
-            <button class="btn btn--soon" disabled>Скоро</button>
-          </div>
-        </article>
+        </div>
       </div>
     </section>
 
-    <!-- 6. Контакты -->
-    <section id="contact" class="section section--contact">
+    <!-- 6. AI-музыка (отдельная вкладка в навигации) -->
+    <section id="music" class="section section--music">
       <div class="section__header">
         <span class="section__label">05</span>
+        <h2 class="section__title">AI-музыка</h2>
+      </div>
+      <div class="card card--music">
+        <div class="card__accent"></div>
+        <p>
+          Создаю музыкальные концепции и песни с помощью нейросетей — от детских сказок
+          до атмосферных композиций. Работаю с <span class="tool-name">Suno</span> и другими AI-инструментами.
+        </p>
+        <div class="music-player music-player--featured">
+          <div class="music-player__cover" aria-hidden="true">♫</div>
+          <div class="music-player__info">
+            <h3 class="music-player__title">Жил-был дракон — не страшный, не злой</h3>
+            <p class="music-player__meta">AI-музыка • Suno</p>
+            <audio class="music-player__audio" controls preload="metadata">
+              <source src="media/audio/dragon-song.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Контакты -->
+    <section id="contact" class="section section--contact">
+      <div class="section__header">
+        <span class="section__label">06</span>
         <h2 class="section__title">Контакты</h2>
       </div>
       <div class="contact-block">
@@ -177,17 +238,26 @@
           Открыта к креативным AI-проектам, экспериментам и новым идеям.
         </p>
         <div class="contact-links">
-          <a href="#" class="contact-link">
+          <a href="https://t.me/DKaterina95" class="contact-link" target="_blank" rel="noopener noreferrer">
             <span class="contact-link__icon">✈</span>
-            Telegram
+            <span>
+              <span class="contact-link__label">Telegram</span>
+              <span class="contact-link__value">@DKaterina95</span>
+            </span>
           </a>
-          <a href="#" class="contact-link">
+          <a href="https://instagram.com/demidovich.95" class="contact-link" target="_blank" rel="noopener noreferrer">
             <span class="contact-link__icon">◎</span>
-            Instagram
+            <span>
+              <span class="contact-link__label">Instagram</span>
+              <span class="contact-link__value">demidovich.95</span>
+            </span>
           </a>
-          <a href="#" class="contact-link">
+          <a href="mailto:demidovich.95@mail.ru" class="contact-link">
             <span class="contact-link__icon">✉</span>
-            Email
+            <span>
+              <span class="contact-link__label">Email</span>
+              <span class="contact-link__value">demidovich.95@mail.ru</span>
+            </span>
           </a>
         </div>
       </div>
@@ -198,5 +268,24 @@
   <footer class="footer">
     <p>© 2025 Екатерина Демидович. Создано с помощью AI и креативности.</p>
   </footer>
+
+  <script>
+    document.querySelectorAll('.projects-tab').forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.tab;
+
+        document.querySelectorAll('.projects-tab').forEach((t) => {
+          t.classList.toggle('projects-tab--active', t === tab);
+          t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
+        });
+
+        document.querySelectorAll('.projects-panel').forEach((panel) => {
+          const isActive = panel.id === `panel-${target}`;
+          panel.classList.toggle('projects-panel--active', isActive);
+          panel.hidden = !isActive;
+        });
+      });
+    });
+  </script>
 </body>
 </html>
