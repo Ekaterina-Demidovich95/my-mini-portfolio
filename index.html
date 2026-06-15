@@ -3,34 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=1200">
-  <title>Екатерина Демидович — Промпт-инженер • AI-креатор</title>
+  <title>Екатерина Демидович — AI-креатор • Контент-маркетолог</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-page="home">
   <div class="bg-grid" aria-hidden="true"></div>
   <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
   <div class="bg-glow bg-glow--2" aria-hidden="true"></div>
   <div class="bg-glow bg-glow--3" aria-hidden="true"></div>
 
   <header class="nav">
-    <a href="#hero" class="nav__logo">ЕД</a>
+    <a href="index.html" class="nav__logo">ЕД</a>
     <nav class="nav__links">
-      <a href="#about">Обо мне</a>
-      <a href="#skills">Навыки</a>
-      <a href="#directions">Направления</a>
-      <a href="#projects">Проекты</a>
-      <a href="#music">AI-музыка</a>
-      <a href="#contact">Контакты</a>
+      <a href="index.html" data-page="home">Главная</a>
+      <a href="visuals.html" data-page="visuals">Визуалы</a>
+      <a href="video.html" data-page="video">Видео</a>
+      <a href="marketing.html" data-page="marketing">Маркетинг</a>
+      <a href="coding.html" data-page="coding">Код</a>
+      <a href="contacts.html" data-page="contacts">Контакты</a>
     </nav>
   </header>
 
   <main>
-    <!-- 1. Главный экран -->
-    <section id="hero" class="hero">
-      <div class="hero__visual">
+    <section class="hero">
+      <div class="hero__visual fade-in">
         <div class="hero-photo">
           <div class="hero-photo__glow" aria-hidden="true"></div>
           <div class="hero-photo__frame">
@@ -38,254 +37,80 @@
               src="images/hero-photo.png"
               alt="Екатерина Демидович — AI-креатор"
               class="hero-photo__img"
-              width="360"
-              height="360"
+              width="400"
+              height="400"
             >
           </div>
         </div>
       </div>
-      <div class="hero__content">
+      <div class="hero__content fade-in">
         <p class="hero__badge">
           <span class="hero__badge-dot"></span>
-          AI • Креатив • Будущее
+          AI • Маркетинг • Креатив
         </p>
         <h1 class="hero__title">Екатерина Демидович</h1>
-        <p class="hero__subtitle">Промпт-инженер • AI-креатор • изучаю вайб-кодинг</p>
+        <p class="hero__subtitle">AI-креатор • Контент-маркетолог • Вайб-кодер</p>
         <p class="hero__text">
-          Создаю идеи, визуалы, видео и контент с помощью нейросетей. Соединяю креатив,
-          промпт-инжиниринг и AI-инструменты, чтобы превращать идеи в готовые цифровые проекты.
+          Создаю контент, визуалы, видео, презентации и цифровые проекты с помощью нейросетей.
         </p>
-        <div class="hero__actions">
-          <a href="#projects" class="btn btn--primary">Посмотреть проекты</a>
-          <a href="#contact" class="btn btn--outline">Связаться со мной</a>
+        <div class="hero__portal">
+          <a href="visuals.html" class="btn btn--portal">AI-визуалы</a>
+          <a href="video.html" class="btn btn--portal">AI-видео</a>
+          <a href="marketing.html" class="btn btn--portal">Нейромаркетинг</a>
+          <a href="coding.html" class="btn btn--portal">Вайб-кодинг</a>
+          <a href="contacts.html" class="btn btn--portal btn--portal-outline">Контакты</a>
         </div>
       </div>
     </section>
 
-    <!-- 2. Обо мне -->
-    <section id="about" class="section">
+    <section class="section fade-in">
       <div class="section__header">
-        <span class="section__label">01</span>
-        <h2 class="section__title">Обо мне</h2>
+        <h2 class="section__title">О подходе</h2>
       </div>
       <div class="card card--about">
         <div class="card__accent"></div>
         <p>
-          Я <strong>Екатерина Демидович</strong> — промпт-инженер и AI-креатор. Я прошла обучение
-          по промпт-инжинирингу и работаю с разными нейросетями и AI-инструментами:
-          <span class="tool-name">ChatGPT</span>, <span class="tool-name">Gemini</span>,
+          Я не просто создаю AI-контент.
+          Я помогаю решать задачи: <strong>упаковка экспертов</strong>, контент, визуал,
+          маркетинг и цифровые продукты.
+        </p>
+        <p>
+          Работаю с <span class="tool-name">ChatGPT</span>, <span class="tool-name">Gemini</span>,
           <span class="tool-name">Kling</span>, <span class="tool-name">Veo</span>,
-          <span class="tool-name">Suno</span> и другими.
-        </p>
-        <p>
-          Мне интересно соединять креатив и технологии: придумывать идеи, создавать контент-планы,
-          генерировать визуалы, видео, тексты и музыкальные концепции с помощью нейросетей.
-        </p>
-        <p>
-          Сейчас я расширяю свои навыки и изучаю вайб-кодинг, чтобы создавать не только контент,
-          но и полноценные цифровые проекты.
+          <span class="tool-name">Suno</span> и другими AI-инструментами — от идеи до готового результата.
         </p>
       </div>
     </section>
 
-    <!-- 3. Навыки -->
-    <section id="skills" class="section">
+    <section class="section fade-in">
       <div class="section__header">
-        <span class="section__label">02</span>
-        <h2 class="section__title">Навыки</h2>
+        <h2 class="section__title">Достижения</h2>
       </div>
-      <div class="skills-grid">
-        <span class="skill-tag">Промпт-инжиниринг</span>
-        <span class="skill-tag">Создание AI-контента</span>
-        <span class="skill-tag">Генерация изображений</span>
-        <span class="skill-tag">Генерация видео</span>
-        <span class="skill-tag">Контент-планы</span>
-        <span class="skill-tag skill-tag--en">ChatGPT & Gemini</span>
-        <span class="skill-tag skill-tag--en">Kling • Veo • Suno</span>
-        <span class="skill-tag">Генерация музыки</span>
-        <span class="skill-tag">Вайб-кодинг</span>
-        <span class="skill-tag">Креативные концепции</span>
-        <span class="skill-tag">Визуальное мышление</span>
-      </div>
-    </section>
-
-    <!-- 4. Направления -->
-    <section id="directions" class="section">
-      <div class="section__header">
-        <span class="section__label">03</span>
-        <h2 class="section__title">Мои направления</h2>
-      </div>
-      <div class="directions-grid">
-        <article class="direction-card">
-          <div class="direction-card__icon">◈</div>
-          <h3>AI-визуалы</h3>
-          <p>Генерация образов, стилей и визуальных концепций с помощью нейросетей</p>
+      <div class="stats-grid">
+        <article class="stat-card">
+          <span class="stat-card__value">50+</span>
+          <span class="stat-card__label">AI-проектов</span>
         </article>
-        <article class="direction-card">
-          <div class="direction-card__icon">▶</div>
-          <h3>AI-видео</h3>
-          <p>Создание динамичного видеоконтента и визуальных историй</p>
+        <article class="stat-card">
+          <span class="stat-card__value">120+</span>
+          <span class="stat-card__label">визуалов</span>
         </article>
-        <article class="direction-card">
-          <div class="direction-card__icon">✦</div>
-          <h3>Контент и идеи</h3>
-          <p>Контент-планы, тексты и креативные концепции на стыке AI и креатива</p>
+        <article class="stat-card">
+          <span class="stat-card__value">30+</span>
+          <span class="stat-card__label">AI-видео</span>
         </article>
-        <article class="direction-card">
-          <div class="direction-card__icon">♫</div>
-          <h3>AI-музыка</h3>
-          <p>Музыкальные концепции, песни и саунд-дизайн, созданные с помощью нейросетей</p>
+        <article class="stat-card">
+          <span class="stat-card__value">✦</span>
+          <span class="stat-card__label">Опыт в нейромаркетинге и воронках продаж</span>
         </article>
-      </div>
-    </section>
-
-    <!-- 5. Проекты -->
-    <section id="projects" class="section">
-      <div class="section__header">
-        <span class="section__label">04</span>
-        <h2 class="section__title">Проекты</h2>
-      </div>
-
-      <div class="projects-tabs" role="tablist" aria-label="Категории проектов">
-        <button class="projects-tab projects-tab--active" role="tab" aria-selected="true" data-tab="visuals">AI-визуалы</button>
-        <button class="projects-tab" role="tab" aria-selected="false" data-tab="video">AI-видео</button>
-        <button class="projects-tab" role="tab" aria-selected="false" data-tab="music">AI-музыка</button>
-      </div>
-
-      <div class="projects-panel projects-panel--active" id="panel-visuals" role="tabpanel">
-        <p class="projects-panel__desc">Серия визуальных экспериментов и AI-образов, созданных с помощью нейросетей</p>
-        <div class="gallery gallery--visuals">
-          <figure class="gallery__item">
-            <img src="media/images/visual-forest.png" alt="AI-визуал: волшебный лес" loading="lazy">
-          </figure>
-          <figure class="gallery__item">
-            <img src="media/images/visual-greenhouse.png" alt="AI-визуал: тюльпаны в теплице" loading="lazy">
-          </figure>
-          <figure class="gallery__item">
-            <img src="media/images/visual-winter.png" alt="AI-визуал: зимняя сказка" loading="lazy">
-          </figure>
-          <figure class="gallery__item">
-            <img src="media/images/visual-chainsaw.png" alt="AI-визуал: готический портрет" loading="lazy">
-          </figure>
-          <figure class="gallery__item gallery__item--video">
-            <video src="media/videos/0315.mp4" controls preload="metadata" poster="media/images/visual-forest.png"></video>
-          </figure>
-        </div>
-      </div>
-
-      <div class="projects-panel" id="panel-video" role="tabpanel" hidden>
-        <p class="projects-panel__desc">Видеопроекты и motion-концепции, созданные с помощью нейросетей</p>
-        <div class="gallery gallery--video">
-          <figure class="gallery__item gallery__item--video">
-            <video src="media/videos/0305.mp4" controls preload="metadata"></video>
-            <figcaption>AI-видео 0305</figcaption>
-          </figure>
-          <figure class="gallery__item gallery__item--video">
-            <video src="media/videos/0126.mp4" controls preload="metadata"></video>
-            <figcaption>AI-видео 0126</figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <div class="projects-panel" id="panel-music" role="tabpanel" hidden>
-        <p class="projects-panel__desc">Музыкальные работы, созданные с помощью AI-инструментов</p>
-        <div class="music-player">
-          <div class="music-player__cover" aria-hidden="true">♫</div>
-          <div class="music-player__info">
-            <h3 class="music-player__title">Жил-был дракон — не страшный, не злой</h3>
-            <p class="music-player__meta">AI-музыка • Suno</p>
-            <audio class="music-player__audio" controls preload="metadata">
-              <source src="media/audio/dragon-song.mp3" type="audio/mpeg">
-            </audio>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. AI-музыка (отдельная вкладка в навигации) -->
-    <section id="music" class="section section--music">
-      <div class="section__header">
-        <span class="section__label">05</span>
-        <h2 class="section__title">AI-музыка</h2>
-      </div>
-      <div class="card card--music">
-        <div class="card__accent"></div>
-        <p>
-          Создаю музыкальные концепции и песни с помощью нейросетей — от детских сказок
-          до атмосферных композиций. Работаю с <span class="tool-name">Suno</span> и другими AI-инструментами.
-        </p>
-        <div class="music-player music-player--featured">
-          <div class="music-player__cover" aria-hidden="true">♫</div>
-          <div class="music-player__info">
-            <h3 class="music-player__title">Жил-был дракон — не страшный, не злой</h3>
-            <p class="music-player__meta">AI-музыка • Suno</p>
-            <audio class="music-player__audio" controls preload="metadata">
-              <source src="media/audio/dragon-song.mp3" type="audio/mpeg">
-            </audio>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 7. Контакты -->
-    <section id="contact" class="section section--contact">
-      <div class="section__header">
-        <span class="section__label">06</span>
-        <h2 class="section__title">Контакты</h2>
-      </div>
-      <div class="contact-block">
-        <p class="contact-block__text">
-          Открыта к креативным AI-проектам, экспериментам и новым идеям.
-        </p>
-        <div class="contact-links">
-          <a href="https://t.me/DKaterina95" class="contact-link" target="_blank" rel="noopener noreferrer">
-            <span class="contact-link__icon">✈</span>
-            <span>
-              <span class="contact-link__label">Telegram</span>
-              <span class="contact-link__value">@DKaterina95</span>
-            </span>
-          </a>
-          <a href="https://instagram.com/demidovich.95" class="contact-link" target="_blank" rel="noopener noreferrer">
-            <span class="contact-link__icon">◎</span>
-            <span>
-              <span class="contact-link__label">Instagram</span>
-              <span class="contact-link__value">demidovich.95</span>
-            </span>
-          </a>
-          <a href="mailto:demidovich.95@mail.ru" class="contact-link">
-            <span class="contact-link__icon">✉</span>
-            <span>
-              <span class="contact-link__label">Email</span>
-              <span class="contact-link__value">demidovich.95@mail.ru</span>
-            </span>
-          </a>
-        </div>
       </div>
     </section>
   </main>
 
-  <!-- 7. Footer -->
   <footer class="footer">
-    <p>© 2025 Екатерина Демидович. Создано с помощью AI и креативности.</p>
+    <p>© 2026 Екатерина Демидович. Создано с помощью AI и креативности.</p>
   </footer>
 
-  <script>
-    document.querySelectorAll('.projects-tab').forEach((tab) => {
-      tab.addEventListener('click', () => {
-        const target = tab.dataset.tab;
-
-        document.querySelectorAll('.projects-tab').forEach((t) => {
-          t.classList.toggle('projects-tab--active', t === tab);
-          t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
-        });
-
-        document.querySelectorAll('.projects-panel').forEach((panel) => {
-          const isActive = panel.id === `panel-${target}`;
-          panel.classList.toggle('projects-panel--active', isActive);
-          panel.hidden = !isActive;
-        });
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

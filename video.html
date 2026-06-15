@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1200">
+  <title>AI-видео — Екатерина Демидович</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="video">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--2" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--3" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="index.html" class="nav__logo">ЕД</a>
+    <nav class="nav__links">
+      <a href="index.html" data-page="home">Главная</a>
+      <a href="visuals.html" data-page="visuals">Визуалы</a>
+      <a href="video.html" data-page="video">Видео</a>
+      <a href="marketing.html" data-page="marketing">Маркетинг</a>
+      <a href="coding.html" data-page="coding">Код</a>
+      <a href="contacts.html" data-page="contacts">Контакты</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero fade-in">
+      <h1 class="page-hero__title">AI-видео</h1>
+      <p class="page-hero__text">Видеопроекты и motion-концепции, созданные с помощью нейросетей</p>
+    </section>
+
+    <section class="section fade-in">
+      <div class="video-list">
+        <article class="video-case">
+          <div class="video-case__player">
+            <video src="media/videos/0305.mp4" controls preload="metadata"></video>
+          </div>
+          <div class="video-case__body">
+            <h2 class="video-case__title">AI-видео 0305</h2>
+            <dl class="video-case__meta">
+              <div><dt>Задача</dt><dd>Создать динамичный AI-ролик с выразительной визуальной подачей.</dd></div>
+              <div><dt>Процесс</dt><dd>Промпт-инжиниринг, генерация сцен и сборка в AI-видеоредакторе.</dd></div>
+              <div><dt>Результат</dt><dd>Готовый видеоролик для портфолио и демонстрации навыков AI-видео.</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="video-case">
+          <div class="video-case__player">
+            <video src="media/videos/0126.mp4" controls preload="metadata"></video>
+          </div>
+          <div class="video-case__body">
+            <h2 class="video-case__title">AI-видео 0126</h2>
+            <dl class="video-case__meta">
+              <div><dt>Задача</dt><dd>Разработать визуальную историю с кинематографичным настроением.</dd></div>
+              <div><dt>Процесс</dt><dd>Подбор референсов, создание промптов и последовательная генерация кадров.</dd></div>
+              <div><dt>Результат</dt><dd>Атмосферное AI-видео с цельной визуальной концепцией.</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="video-case">
+          <div class="video-case__player">
+            <video src="media/videos/0315.mp4" controls preload="metadata"></video>
+          </div>
+          <div class="video-case__body">
+            <h2 class="video-case__title">AI-видео 0315</h2>
+            <dl class="video-case__meta">
+              <div><dt>Задача</dt><dd>Создать AI-видео с акцентом на образ и эмоциональную подачу.</dd></div>
+              <div><dt>Процесс</dt><dd>Генерация визуала и анимации с помощью нейросетей, доработка композиции.</dd></div>
+              <div><dt>Результат</dt><dd>Завершённый видеопроект для раздела AI-видео портфолио.</dd></div>
+            </dl>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section fade-in">
+      <div class="section__header">
+        <h2 class="section__title">AI-музыка</h2>
+      </div>
+      <div class="music-player">
+        <div class="music-player__cover" aria-hidden="true">♫</div>
+        <div class="music-player__info">
+          <h3 class="music-player__title">Жил-был дракон — не страшный, не злой</h3>
+          <p class="music-player__meta">AI-музыка • Suno</p>
+          <audio class="music-player__audio" controls preload="metadata">
+            <source src="media/audio/dragon-song.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Екатерина Демидович. Создано с помощью AI и креативности.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
