@@ -271,6 +271,14 @@ main {
   gap: 12px;
 }
 
+.hero__works-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: var(--text);
+}
+
 .btn--portal {
   padding: 12px 22px;
   font-size: 0.9rem;
@@ -809,6 +817,10 @@ main {
   gap: 20px;
 }
 
+.stats-grid--5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
 .stat-card {
   padding: 32px 24px;
   text-align: center;
@@ -1115,4 +1127,112 @@ main {
   display: flex;
   width: fit-content;
   margin: 32px auto 0;
+}
+
+/* ===== Home: services, audience, reviews ===== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  padding: 32px 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 28px rgba(91, 141, 184, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(91, 141, 184, 0.12);
+}
+
+.service-card__title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.service-card__desc {
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.service-card__desc:last-child {
+  margin-bottom: 0;
+}
+
+.service-card__label {
+  font-weight: 600;
+  color: var(--text);
+  margin: 16px 0 10px;
+}
+
+.service-card__list {
+  padding-left: 20px;
+  color: var(--text-muted);
+}
+
+.service-card__list li {
+  margin-bottom: 6px;
+}
+
+.service-card__list li:last-child {
+  margin-bottom: 0;
+}
+
+.card__lead {
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.audience-list {
+  padding-left: 20px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.audience-list li {
+  margin-bottom: 10px;
+}
+
+.audience-list li:last-child {
+  margin-bottom: 0;
+}
+
+.card__note {
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  color: var(--text);
+  font-weight: 500;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.review-card {
+  margin: 0;
+  padding: 28px 32px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 28px rgba(91, 141, 184, 0.08);
+}
+
+.review-card p {
+  color: var(--text-muted);
+  font-style: italic;
+  line-height: 1.7;
+}
+
+.reviews-grid .review-card:last-child {
+  grid-column: span 2;
 }
