@@ -195,8 +195,8 @@ main {
 /* ===== Hero ===== */
 .hero {
   display: grid;
-  grid-template-columns: minmax(360px, 40%) 1fr;
-  gap: 60px;
+  grid-template-columns: minmax(440px, 48%) 1fr;
+  gap: 56px;
   align-items: center;
   min-height: 85vh;
   padding-top: 40px;
@@ -354,7 +354,7 @@ main {
 .hero-photo {
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 480px;
   aspect-ratio: 1;
 }
 
@@ -659,6 +659,12 @@ main {
 .music-player__audio {
   width: 100%;
   height: 40px;
+}
+
+.music-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .card--music p {
@@ -983,6 +989,31 @@ main {
   color: var(--text-muted);
 }
 
+.case-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.btn--case {
+  padding: 12px 22px;
+  font-size: 0.9rem;
+  background: rgba(91, 141, 184, 0.1);
+  color: var(--text);
+  border: 1px solid var(--border);
+  box-shadow: none;
+}
+
+.btn--case:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-blue);
+  background: rgba(91, 141, 184, 0.16);
+  box-shadow: 0 6px 20px rgba(91, 141, 184, 0.12);
+}
+
 /* ===== Product cards ===== */
 .product-list {
   display: grid;
@@ -1028,6 +1059,10 @@ main {
   margin-bottom: 16px;
 }
 
+.product-card .btn--case {
+  margin-bottom: 16px;
+}
+
 .product-card__tag {
   display: inline-block;
   padding: 6px 14px;
@@ -1039,14 +1074,45 @@ main {
 }
 
 /* ===== Contacts page ===== */
-.contact-links--page {
-  flex-direction: column;
-  align-items: stretch;
-  max-width: 480px;
-  margin: 0 auto;
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  position: relative;
 }
 
-.contact-link--primary {
-  border-color: rgba(91, 141, 184, 0.35);
-  background: rgba(91, 141, 184, 0.12);
+.btn--contact {
+  padding: 16px 36px;
+  font-size: 0.95rem;
+  background: rgba(91, 141, 184, 0.08);
+  color: var(--text);
+  border: 1px solid var(--border);
+  box-shadow: none;
+}
+
+.btn--contact:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-gold);
+  background: rgba(201, 168, 108, 0.12);
+  box-shadow: var(--glow-gold);
+}
+
+.btn--contact-primary {
+  background: var(--gradient-main);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: var(--glow-blue);
+}
+
+.btn--contact-primary:hover {
+  border-color: transparent;
+  background: var(--gradient-main);
+  box-shadow: 0 8px 32px rgba(91, 141, 184, 0.35);
+}
+
+.contact-block .btn--cta {
+  display: flex;
+  width: fit-content;
+  margin: 32px auto 0;
 }
