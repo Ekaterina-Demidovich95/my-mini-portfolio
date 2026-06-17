@@ -1257,6 +1257,7 @@ main {
   .nav {
     width: calc(100% - 40px);
     padding: 16px 0;
+    z-index: 200;
   }
 
   .nav__burger {
@@ -1271,7 +1272,10 @@ main {
     border-radius: 12px;
     background: var(--bg-card);
     cursor: pointer;
-    z-index: 110;
+    position: relative;
+    z-index: 202;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
   }
 
   .nav__burger-line {
@@ -1312,12 +1316,14 @@ main {
     box-shadow: -8px 0 40px rgba(91, 141, 184, 0.12);
     transform: translateX(100%);
     transition: transform 0.3s ease;
-    z-index: 105;
+    z-index: 201;
     overflow-y: auto;
+    pointer-events: none;
   }
 
   .nav__links--open {
     transform: translateX(0);
+    pointer-events: auto;
   }
 
   .nav__links a {
@@ -1325,6 +1331,10 @@ main {
     padding: 14px 0;
     font-size: 1rem;
     border-bottom: 1px solid rgba(91, 141, 184, 0.1);
+    position: relative;
+    z-index: 1;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
   }
 
   body.nav-open::before {
@@ -1332,7 +1342,8 @@ main {
     position: fixed;
     inset: 0;
     background: rgba(45, 58, 74, 0.35);
-    z-index: 104;
+    z-index: 150;
+    pointer-events: auto;
   }
 
   main {

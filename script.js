@@ -11,8 +11,18 @@ if (currentPage) {
 const burger = document.querySelector('.nav__burger');
 const nav = document.querySelector('.nav__links');
 
+function closeNav() {
+  if (!nav || !burger) return;
+  nav.classList.remove('nav__links--open');
+  burger.classList.remove('nav__burger--open');
+  burger.setAttribute('aria-expanded', 'false');
+  burger.setAttribute('aria-label', 'Открыть меню');
+  document.body.classList.remove('nav-open');
+}
+
 if (burger && nav) {
-  burger.addEventListener('click', () => {
+  burger.addEventListener('click', (e) => {
+    e.stopPropagation();
     const isOpen = nav.classList.toggle('nav__links--open');
     burger.classList.toggle('nav__burger--open', isOpen);
     burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
@@ -22,21 +32,19 @@ if (burger && nav) {
 
   nav.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
-      nav.classList.remove('nav__links--open');
-      burger.classList.remove('nav__burger--open');
-      burger.setAttribute('aria-expanded', 'false');
-      burger.setAttribute('aria-label', 'Открыть меню');
-      document.body.classList.remove('nav-open');
+      closeNav();
     });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!nav.classList.contains('nav__links--open')) return;
+    if (nav.contains(e.target) || burger.contains(e.target)) return;
+    closeNav();
   });
 
   window.addEventListener('resize', () => {
     if (window.innerWidth > 1024) {
-      nav.classList.remove('nav__links--open');
-      burger.classList.remove('nav__burger--open');
-      burger.setAttribute('aria-expanded', 'false');
-      burger.setAttribute('aria-label', 'Открыть меню');
-      document.body.classList.remove('nav-open');
+      closeNav();
     }
   });
 }
