@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=1200">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Контакты — Екатерина Демидович</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,12 @@
 
   <header class="nav">
     <a href="index.html" class="nav__logo">ЕД</a>
-    <nav class="nav__links">
+    <button class="nav__burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav__burger-line"></span>
+      <span class="nav__burger-line"></span>
+      <span class="nav__burger-line"></span>
+    </button>
+    <nav class="nav__links" id="site-nav">
       <a href="index.html" data-page="home">Главная</a>
       <a href="visuals.html" data-page="visuals">Визуалы</a>
       <a href="video.html" data-page="video">Видео</a>
