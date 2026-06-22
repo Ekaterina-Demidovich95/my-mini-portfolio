@@ -5,6 +5,7 @@
   --bg-card-hover: rgba(255, 255, 255, 0.95);
   --text: #2d3a4a;
   --text-muted: #5c6b7a;
+  --heading: #364a5c;
   --accent-blue: #5b8db8;
   --accent-gold: #c9a86c;
   --accent-green: #7a9e7e;
@@ -139,7 +140,9 @@ strong {
 
 .nav__links {
   display: flex;
-  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 22px;
 }
 
 .nav__links a {
@@ -181,10 +184,23 @@ main {
 }
 
 .section__header {
+  position: relative;
   display: flex;
   align-items: baseline;
   gap: 20px;
-  margin-bottom: 36px;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+}
+
+.section__header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 56px;
+  height: 3px;
+  background: var(--gradient-main);
+  border-radius: 2px;
 }
 
 .section__label {
@@ -199,10 +215,9 @@ main {
   font-family: var(--font-display);
   font-size: 2rem;
   font-weight: 700;
-  background: var(--gradient-main);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--heading);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
 }
 
 /* ===== Hero ===== */
@@ -285,11 +300,7 @@ main {
 }
 
 .hero__works-title {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 14px;
-  color: var(--text);
+  margin-bottom: 16px;
 }
 
 .btn--portal {
@@ -436,6 +447,7 @@ main {
 .card--about p {
   margin-bottom: 20px;
   color: var(--text-muted);
+  overflow-wrap: break-word;
 }
 
 .card--about p:last-child {
@@ -695,12 +707,16 @@ main {
 /* ===== Contact ===== */
 .contact-block {
   text-align: center;
-  padding: 56px 48px;
+  padding: 48px 48px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   position: relative;
   overflow: hidden;
+}
+
+.contact-block--compact {
+  padding: 40px 32px;
 }
 
 .contact-block::before {
@@ -804,6 +820,8 @@ main {
 /* ===== Page hero ===== */
 .page-hero {
   margin-bottom: 48px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(91, 141, 184, 0.12);
 }
 
 .page-hero__title {
@@ -811,16 +829,16 @@ main {
   font-size: 2.8rem;
   font-weight: 700;
   margin-bottom: 12px;
-  background: var(--gradient-main);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--heading);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
 .page-hero__text {
   font-size: 1.1rem;
   color: var(--text-muted);
   max-width: 640px;
+  line-height: 1.65;
 }
 
 /* ===== Stats ===== */
@@ -906,6 +924,8 @@ main {
   font-family: var(--font-display);
   font-size: 1.35rem;
   margin-bottom: 8px;
+  color: var(--heading);
+  line-height: 1.25;
 }
 
 .work-card__desc {
@@ -1167,7 +1187,8 @@ main {
   font-family: var(--font-display);
   font-size: 1.35rem;
   margin-bottom: 12px;
-  color: var(--text);
+  color: var(--heading);
+  line-height: 1.25;
 }
 
 .service-card__desc {
@@ -1244,10 +1265,231 @@ main {
   color: var(--text-muted);
   font-style: italic;
   line-height: 1.7;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .reviews-grid .review-card:last-child {
   grid-column: span 2;
+}
+
+/* ===== Services: home pricing cards ===== */
+.section__intro {
+  color: var(--text-muted);
+  max-width: 720px;
+  margin: 0 0 32px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.section__actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 28px 26px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 28px rgba(91, 141, 184, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(91, 141, 184, 0.4);
+  box-shadow: 0 16px 40px rgba(91, 141, 184, 0.14);
+}
+
+.pricing-card__icon {
+  font-size: 1.8rem;
+  margin-bottom: 14px;
+}
+
+.pricing-card__title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+  color: var(--heading);
+  line-height: 1.25;
+}
+
+.pricing-card__list {
+  flex: 1;
+  padding-left: 18px;
+  margin-bottom: 20px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.pricing-card__list li {
+  margin-bottom: 6px;
+}
+
+.pricing-card__list li:last-child {
+  margin-bottom: 0;
+}
+
+.pricing-card__price {
+  display: inline-block;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+}
+
+/* ===== Services page ===== */
+.page-hero__note {
+  margin-top: 16px;
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  max-width: 720px;
+  line-height: 1.7;
+}
+
+body[data-page="services"] .page-hero__text,
+body[data-page="services"] .page-hero__note {
+  max-width: none;
+  width: 100%;
+}
+
+.service-offers {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.service-offer {
+  position: relative;
+  padding: 40px 44px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 32px rgba(91, 141, 184, 0.08);
+  scroll-margin-top: 100px;
+}
+
+.service-offer__accent {
+  position: absolute;
+  top: 0;
+  left: 44px;
+  right: 44px;
+  height: 3px;
+  background: var(--gradient-main);
+  border-radius: 0 0 4px 4px;
+}
+
+.service-offer__title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  margin-bottom: 14px;
+  color: var(--heading);
+  line-height: 1.2;
+}
+
+.service-offer__desc {
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  max-width: 720px;
+}
+
+body[data-page="services"] .service-offer__desc {
+  max-width: none;
+}
+
+.service-offer__subtitle {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.service-offer__list,
+.service-offer__fits {
+  padding-left: 20px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.service-offer__list li,
+.service-offer__fits li {
+  margin-bottom: 8px;
+}
+
+.service-offer__list li:last-child,
+.service-offer__fits li:last-child {
+  margin-bottom: 0;
+}
+
+.service-offer__price {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--accent-blue);
+}
+
+.service-offer .btn {
+  margin-top: 12px;
+}
+
+.section__title--inline {
+  margin-bottom: 16px;
+  color: var(--heading);
+}
+
+.tools-card__text {
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.tools-card__groups p {
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.tools-card__groups p:last-child {
+  margin-bottom: 0;
+}
+
+.services-cta {
+  text-align: center;
+}
+
+.services-cta__title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  margin-bottom: 16px;
+  color: var(--heading);
+  line-height: 1.25;
+}
+
+.services-cta .contact-block__text {
+  margin-bottom: 16px;
+}
+
+.services-cta .contact-block__text:last-of-type {
+  margin-bottom: 28px;
+}
+
+.services-cta .btn {
+  position: relative;
+  margin: 0 auto;
 }
 
 /* ===== Responsive (tablet & mobile only) ===== */
@@ -1395,6 +1637,10 @@ main {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .gallery--visuals {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1474,13 +1720,20 @@ main {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
   .card,
-  .case-card {
+  .case-card,
+  .service-offer,
+  .pricing-card {
     padding: 28px 24px;
   }
 
   .card__accent,
-  .case-card__accent {
+  .case-card__accent,
+  .service-offer__accent {
     left: 24px;
     right: 24px;
   }
@@ -1591,7 +1844,9 @@ main {
 
   .service-card,
   .product-card,
-  .review-card {
+  .review-card,
+  .pricing-card,
+  .service-offer {
     padding: 22px 20px;
   }
 
