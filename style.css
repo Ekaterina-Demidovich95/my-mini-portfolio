@@ -801,6 +801,101 @@ main {
   color: var(--text-muted);
 }
 
+.footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 24px;
+  margin-bottom: 16px;
+}
+
+.footer__legal a {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.25s ease;
+}
+
+.footer__legal a:hover,
+.footer__legal a[aria-current="page"] {
+  color: var(--accent-blue);
+}
+
+.legal-doc {
+  padding: 40px 44px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 32px rgba(91, 141, 184, 0.08);
+}
+
+.legal-doc__lead {
+  margin-bottom: 28px;
+  font-size: 1.05rem;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.legal-doc h2 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--heading);
+  margin: 32px 0 14px;
+  line-height: 1.25;
+}
+
+.legal-doc h2:first-of-type {
+  margin-top: 0;
+}
+
+.legal-doc p,
+.legal-doc li {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.legal-doc ul {
+  padding-left: 22px;
+  margin-bottom: 16px;
+}
+
+.legal-doc li {
+  margin-bottom: 8px;
+}
+
+.legal-doc a {
+  color: var(--accent-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.legal-doc a:hover {
+  color: var(--heading);
+}
+
+.legal-doc__updated {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.legal-note {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  text-align: center;
+}
+
+.legal-note a {
+  color: var(--accent-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* ===== Animations ===== */
 @keyframes fade-up {
   from {
@@ -1465,6 +1560,8 @@ main {
 
 .section__actions {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   margin-top: 36px;
 }
@@ -1960,6 +2057,10 @@ body[data-page="services"] .service-offer__desc {
 
   .contact-block {
     padding: 36px 24px;
+  }
+
+  .legal-doc {
+    padding: 28px 24px;
   }
 
   .music-player {
