@@ -35,32 +35,27 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero__visual fade-in">
-        <div class="hero-photo">
-          <div class="hero-photo__glow" aria-hidden="true"></div>
-          <div class="hero-photo__frame">
-            <img
-              src="images/hero-photo.png"
-              alt="Екатерина Демидович — AI-креатор"
-              class="hero-photo__img"
-              width="480"
-              height="480"
-            >
-          </div>
-        </div>
+    <section class="hero hero--cover">
+      <div class="hero__backdrop" aria-hidden="true">
+        <img
+          src="images/hero-photo.png"
+          alt=""
+          class="hero__backdrop-img"
+        >
+        <div class="hero__backdrop-overlay"></div>
       </div>
       <div class="hero__content fade-in">
         <p class="hero__badge">
           <span class="hero__badge-dot"></span>
           AI • Маркетинг • Креатив
         </p>
-        <h1 class="hero__title">Екатерина Демидович</h1>
+        <h1 class="hero__title">Екатерина<br>Демидович</h1>
         <p class="hero__subtitle">AI-креатор • Контент-маркетолог • Вайб-кодер</p>
         <p class="hero__text">
-          Создаю контент, визуалы, видео, презентации и цифровые проекты с помощью нейросетей.
+          Создаю контент, визуалы, видео, музыку и цифровые проекты с помощью нейросетей.
         </p>
-        <h2 class="section__title hero__works-title">Мои работы</h2>
+        <h2 class="section__title hero__projects-title">Мои проекты</h2>
+        <p class="hero__projects-intro">Выберите направление и познакомьтесь с моими проектами.</p>
         <div class="hero__portal">
           <a href="visuals.html" class="btn btn--portal">AI-визуалы</a>
           <a href="video.html" class="btn btn--portal">AI-видео</a>
@@ -91,40 +86,35 @@
       <div class="section__header">
         <h2 class="section__title">Что я создаю с помощью AI</h2>
       </div>
-      <div class="services-grid">
-        <article class="service-card">
-          <h3 class="service-card__title">AI-контент и маркетинг</h3>
-          <p class="service-card__desc">Помогаю экспертам и бизнесу создавать контент, который отвечает на запросы аудитории и помогает выстраивать доверие с клиентами.</p>
-          <p class="service-card__label">Что входит:</p>
-          <ul class="service-card__list">
-            <li>анализ целевой аудитории;</li>
-            <li>поиск болей и потребностей клиентов;</li>
-            <li>разработка контент-идей;</li>
-            <li>создание контент-планов;</li>
-            <li>рекомендации по продвижению.</li>
-          </ul>
+      <div class="services-grid services-grid--create">
+        <article class="service-card service-card--create">
+          <h3 class="service-card__title">🧠 AI-контент</h3>
+          <p class="service-card__desc">Контент-планы, идеи для постов и тексты, которые помогают выстраивать доверие с аудиторией.</p>
         </article>
 
-        <article class="service-card">
-          <h3 class="service-card__title">AI-визуалы</h3>
-          <p class="service-card__desc">Создаю изображения для социальных сетей, презентаций, личных брендов и творческих проектов.</p>
-          <p class="service-card__desc">Использую современные генеративные инструменты для создания уникального визуального контента в различных стилях.</p>
+        <article class="service-card service-card--create">
+          <h3 class="service-card__title">🎨 AI-визуалы</h3>
+          <p class="service-card__desc">Уникальные изображения для соцсетей, презентаций и личных брендов в разных визуальных стилях.</p>
         </article>
 
-        <article class="service-card">
-          <h3 class="service-card__title">AI-видео</h3>
-          <p class="service-card__desc">Создаю ролики на основе изображений, сценариев и идей.</p>
-          <p class="service-card__desc">От концепции и визуального ряда до готового видео для публикации.</p>
+        <article class="service-card service-card--create">
+          <h3 class="service-card__title">🎬 AI-видео</h3>
+          <p class="service-card__desc">Ролики от идеи и сценария до готового видео для публикации в соцсетях и проектах.</p>
         </article>
 
-        <article class="service-card">
-          <h3 class="service-card__title">AI-музыка</h3>
-          <p class="service-card__desc">Создаю музыкальное сопровождение и песни для проектов, презентаций и творческих задач.</p>
+        <article class="service-card service-card--create">
+          <h3 class="service-card__title">🎵 AI-музыка</h3>
+          <p class="service-card__desc">Песни, джинглы и музыкальное сопровождение для видео, презентаций и личных событий.</p>
         </article>
 
-        <article class="service-card">
-          <h3 class="service-card__title">Вайб-кодинг</h3>
-          <p class="service-card__desc">Разрабатываю сайты, мини-сервисы и интерактивные проекты с использованием современных AI-инструментов и веб-технологий.</p>
+        <article class="service-card service-card--create">
+          <h3 class="service-card__title">📈 Нейромаркетинг</h3>
+          <p class="service-card__desc">Анализ аудитории, поиск болей клиентов и рекомендации по контенту и продвижению.</p>
+        </article>
+
+        <article class="service-card service-card--create">
+          <h3 class="service-card__title">💻 Вайб-кодинг</h3>
+          <p class="service-card__desc">Сайты, лендинги, мини-приложения и цифровые проекты с помощью AI и веб-технологий.</p>
         </article>
       </div>
     </section>
