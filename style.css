@@ -117,14 +117,15 @@ strong {
 .nav {
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
   width: min(1100px, calc(100% - 80px));
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 0;
-  z-index: 100;
+  z-index: 300;
 }
 
 .nav__logo {
@@ -283,6 +284,22 @@ main {
   max-width: 560px;
   justify-self: start;
   padding-left: 12px;
+  text-align: center;
+}
+
+.hero--cover .hero__title {
+  text-align: center;
+}
+
+.hero--cover .hero__text,
+.hero--cover .hero__projects-intro {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero--cover .hero__portal {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero--cover + .section {
@@ -1932,7 +1949,7 @@ body[data-page="services"] .service-offer__desc {
   .nav {
     width: calc(100% - 40px);
     padding: 16px 0;
-    z-index: 200;
+    z-index: 300;
   }
 
   .nav__burger {
@@ -1945,10 +1962,11 @@ body[data-page="services"] .service-offer__desc {
     padding: 0;
     border: 1px solid var(--border);
     border-radius: 12px;
-    background: var(--bg-card);
+    background: #fff;
     cursor: pointer;
     position: relative;
-    z-index: 202;
+    z-index: 302;
+    flex-shrink: 0;
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
   }
@@ -1990,14 +2008,16 @@ body[data-page="services"] .service-offer__desc {
     border-left: 1px solid var(--border);
     box-shadow: -8px 0 40px rgba(91, 141, 184, 0.12);
     transform: translateX(100%);
-    transition: transform 0.3s ease;
-    z-index: 201;
+    visibility: hidden;
+    transition: transform 0.3s ease, visibility 0.3s ease;
+    z-index: 301;
     overflow-y: auto;
     pointer-events: none;
   }
 
   .nav__links--open {
     transform: translateX(0);
+    visibility: visible;
     pointer-events: auto;
   }
 
@@ -2017,7 +2037,7 @@ body[data-page="services"] .service-offer__desc {
     position: fixed;
     inset: 0;
     background: rgba(45, 58, 74, 0.35);
-    z-index: 150;
+    z-index: 250;
     pointer-events: auto;
   }
 
@@ -2042,7 +2062,7 @@ body[data-page="services"] .service-offer__desc {
     margin-left: -24px;
     margin-right: -24px;
     min-height: auto;
-    padding: 88px 20px 40px;
+    padding: 24px 20px 40px;
     background: var(--bg-deep);
   }
 
@@ -2053,24 +2073,26 @@ body[data-page="services"] .service-offer__desc {
   .hero__mobile-portrait {
     display: block;
     order: -1;
-    align-self: center;
-    width: min(300px, 78vw);
-    margin: 0 auto 28px;
-    border-radius: 24px;
+    align-self: stretch;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 20px;
+    border-radius: var(--radius-lg);
     overflow: hidden;
-    border: 3px solid rgba(255, 255, 255, 0.95);
-    box-shadow:
-      0 18px 44px rgba(91, 141, 184, 0.2),
-      0 6px 18px rgba(45, 58, 74, 0.08);
+    border: 1px solid rgba(91, 141, 184, 0.2);
+    box-shadow: 0 12px 36px rgba(91, 141, 184, 0.14);
     background: #fff;
+    aspect-ratio: 4 / 5;
+    max-height: min(68vh, 520px);
   }
 
   .hero__mobile-portrait-img {
     display: block;
     width: 100%;
-    aspect-ratio: 1;
+    height: 100%;
+    aspect-ratio: unset;
     object-fit: cover;
-    object-position: center 10%;
+    object-position: center 18%;
   }
 
   .hero--cover .hero__content {
@@ -2209,13 +2231,13 @@ body[data-page="services"] .service-offer__desc {
     width: calc(100% + 40px);
     margin-left: -20px;
     margin-right: -20px;
-    padding: 96px 16px 36px;
+    padding: 20px 16px 36px;
     border-radius: var(--radius);
   }
 
   .hero__mobile-portrait {
-    width: min(280px, 84vw);
-    margin-bottom: 24px;
+    max-height: min(62vh, 460px);
+    margin-bottom: 18px;
   }
 
   .hero--cover .hero__content {
@@ -2237,25 +2259,25 @@ body[data-page="services"] .service-offer__desc {
   }
 
   .hero__badge {
-    margin-left: 0;
+    margin-left: auto;
     margin-right: auto;
   }
 
   .hero__text {
     max-width: none;
-    margin-left: 0;
+    margin-left: auto;
     margin-right: auto;
   }
 
   .hero__works-title,
   .hero__projects-title {
-    text-align: left;
+    text-align: center;
   }
 
   .hero__projects-intro {
-    margin-left: 0;
+    margin-left: auto;
     margin-right: auto;
-    text-align: left;
+    text-align: center;
   }
 
   .hero__portal {
@@ -2400,18 +2422,40 @@ body[data-page="services"] .service-offer__desc {
   }
 
   .testimonials-carousel {
-    overflow: hidden;
+    overflow: visible;
+    padding-bottom: 8px;
   }
 
   .testimonial-card:not(.testimonial-card--center) {
-    opacity: 0 !important;
-    pointer-events: none !important;
+    display: none !important;
   }
 
   .testimonials-carousel__stage {
     height: auto;
-    min-height: 320px;
-    padding-bottom: 8px;
+    min-height: 0;
+    overflow: visible;
+    padding: 12px 0 28px;
+  }
+
+  .testimonial-card--center {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none !important;
+    width: 100% !important;
+    min-height: auto !important;
+    margin: 0 auto;
+    padding: 28px 22px 68px;
+  }
+
+  .testimonial-card__text {
+    overflow: visible;
+  }
+
+  .testimonial-card__tag {
+    left: 22px;
+    right: 22px;
+    bottom: 28px;
   }
 
   .hero__title {
@@ -2518,13 +2562,12 @@ body[data-page="services"] .service-offer__desc {
     width: calc(100% + 32px);
     margin-left: -16px;
     margin-right: -16px;
-    padding: 88px 14px 28px;
+    padding: 16px 14px 28px;
   }
 
   .hero__mobile-portrait {
-    width: min(260px, 88vw);
-    margin-bottom: 20px;
-    border-radius: 20px;
+    max-height: min(58vh, 400px);
+    margin-bottom: 16px;
   }
 
   .hero--cover .hero__content {
@@ -2610,11 +2653,17 @@ body[data-page="services"] .service-offer__desc {
   }
 
   .testimonials-carousel__stage {
-    min-height: 300px;
+    padding: 12px 0 32px;
   }
 
-  .testimonial-card {
-    padding: 24px 20px 52px;
+  .testimonial-card--center {
+    padding: 26px 18px 64px;
+  }
+
+  .testimonial-card__tag {
+    left: 18px;
+    right: 18px;
+    bottom: 24px;
   }
 }
 
@@ -2625,7 +2674,7 @@ body[data-page="services"] .service-offer__desc {
   }
 
   .hero__mobile-portrait {
-    width: min(240px, 90vw);
+    max-height: min(52vh, 360px);
   }
 
   .hero--cover .hero__content {

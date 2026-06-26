@@ -131,9 +131,13 @@ function initTestimonialsCarousel() {
   let order = testimonialsData.map((_, i) => i);
   let cardSize = getCardSize();
 
+  function isMobileCarousel() {
+    return window.innerWidth <= 768;
+  }
+
   function getCardSize() {
     const stageWidth = stage.clientWidth || window.innerWidth;
-    if (window.innerWidth <= 768) return Math.min(stageWidth - 24, 420);
+    if (isMobileCarousel()) return stageWidth;
     return Math.min(360, stageWidth - 80);
   }
 
@@ -153,12 +157,22 @@ function initTestimonialsCarousel() {
       const card = document.createElement('article');
       card.className = `testimonial-card${isCenter ? ' testimonial-card--center' : ''}`;
       card.dataset.position = String(position);
-      card.style.width = `${cardSize}px`;
-      card.style.minHeight = `${Math.min(cardSize, 320)}px`;
-      card.style.transform = getCardTransform(position, isCenter);
+      card.style.width = isMobileCarousel() && isCenter ? '100%' : `${cardSize}px`;
+      card.style.minHeight = isMobileCarousel() && isCenter ? 'auto' : `${Math.min(cardSize, 320)}px`;
+      card.style.transform = isMobileCarousel() && isCenter ? 'none' : getCardTransform(position, isCenter);
       card.style.opacity = Math.abs(position) > 2 ? '0' : String(1 - Math.abs(position) * 0.18);
       card.style.pointerEvents = Math.abs(position) > 2 ? 'none' : 'auto';
       card.style.zIndex = String(10 - Math.abs(position));
+
+      if (isMobileCarousel() && isCenter) {
+        card.style.position = 'relative';
+        card.style.left = 'auto';
+        card.style.top = 'auto';
+      } else {
+        card.style.position = 'absolute';
+        card.style.left = '50%';
+        card.style.top = '50%';
+      }
 
       card.innerHTML = `
         <div class="testimonial-card__avatar" aria-hidden="true">${item.icon}</div>
