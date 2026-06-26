@@ -133,8 +133,7 @@ function initTestimonialsCarousel() {
 
   function getCardSize() {
     const stageWidth = stage.clientWidth || window.innerWidth;
-    if (window.innerWidth <= 430) return Math.min(300, stageWidth - 32);
-    if (window.innerWidth <= 768) return Math.min(320, stageWidth - 48);
+    if (window.innerWidth <= 768) return Math.min(stageWidth - 24, 420);
     return Math.min(360, stageWidth - 80);
   }
 
