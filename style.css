@@ -514,12 +514,8 @@ button.btn {
 @media (min-width: 640px) {
   .btn--lines {
     flex-direction: row;
-    gap: 0;
+    gap: 0.35em;
     line-height: 1.35;
-  }
-
-  .btn--lines .btn__line + .btn__line::before {
-    content: " ";
   }
 }
 
