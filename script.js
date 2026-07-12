@@ -251,4 +251,38 @@ function initTestimonialsCarousel() {
   renderCards();
 }
 
+function initPrivacyAck() {
+  const STORAGE_KEY = 'privacyAcknowledged';
+  const codingNotice = document.getElementById('coding-privacy-notice');
+  const codingBtn = document.getElementById('coding-privacy-ack');
+  const codingDone = document.getElementById('coding-privacy-done');
+  const privacyBtn = document.getElementById('privacy-ack-btn');
+  const privacyDone = document.getElementById('privacy-ack-done');
+
+  function setAcknowledged() {
+    localStorage.setItem(STORAGE_KEY, 'true');
+    if (codingNotice) {
+      codingNotice.classList.add('privacy-notice--acknowledged');
+    }
+    if (codingDone) {
+      codingDone.hidden = false;
+    }
+    if (privacyBtn) {
+      privacyBtn.hidden = true;
+    }
+    if (privacyDone) {
+      privacyDone.hidden = false;
+    }
+  }
+
+  if (localStorage.getItem(STORAGE_KEY) === 'true') {
+    setAcknowledged();
+    return;
+  }
+
+  codingBtn?.addEventListener('click', setAcknowledged);
+  privacyBtn?.addEventListener('click', setAcknowledged);
+}
+
 initTestimonialsCarousel();
+initPrivacyAck();

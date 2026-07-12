@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
@@ -16,7 +16,7 @@
   <div class="bg-glow bg-glow--3" aria-hidden="true"></div>
 
   <header class="nav">
-    <a href="index.html" class="nav__logo">ЕД</a>
+    <a href="index.html" class="nav__logo">Екатерина Демидович</a>
     <button class="nav__burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="site-nav">
       <span class="nav__burger-line"></span>
       <span class="nav__burger-line"></span>
@@ -58,6 +58,14 @@
           <span class="product-card__tag">HTML • CSS • JS</span>
         </article>
 
+        <article class="product-card">
+          <div class="product-card__icon">▦</div>
+          <h2 class="product-card__title">Нонограммы</h2>
+          <p class="product-card__desc">Браузерная головоломка: закрашивайте клетки по подсказкам и открывайте картинки. 14 уровней, таймер, счётчик ошибок, светлая и тёмная тема.</p>
+          <a href="https://ekaterina-demidovich95.github.io/igra_nonograma/" class="btn btn--case" target="_blank" rel="noopener noreferrer">Играть</a>
+          <span class="product-card__tag">HTML • CSS • JS</span>
+        </article>
+
         <article class="product-card product-card--soon">
           <div class="product-card__icon">◇</div>
           <h2 class="product-card__title">Мини-приложения</h2>
@@ -65,6 +73,22 @@
           <span class="product-card__tag">Скоро</span>
         </article>
       </div>
+
+      <aside class="privacy-notice card" id="coding-privacy-notice" aria-labelledby="coding-privacy-title">
+        <div class="card__accent"></div>
+        <h2 class="privacy-notice__title" id="coding-privacy-title">Политика конфиденциальности мини-приложений</h2>
+        <p>
+          Проекты в этом разделе — интерактивные веб-приложения. Некоторые из них могут запрашивать и сохранять данные,
+          которые вы вводите добровольно: например, цели и суммы в планировщике или контактные данные в форме заказа.
+          Эти данные используются только для работы приложения и не передаются третьим лицам без вашего согласия.
+        </p>
+        <p>
+          Подробные условия обработки данных описаны в
+          <a href="privacy.html#mini-apps">политике конфиденциальности</a>.
+        </p>
+        <button type="button" class="btn btn--primary privacy-notice__btn" id="coding-privacy-ack">Ознакомлен</button>
+        <p class="privacy-notice__done" id="coding-privacy-done" hidden>Спасибо! Вы подтвердили ознакомление с политикой.</p>
+      </aside>
     </section>
   </main>
 

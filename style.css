@@ -131,12 +131,14 @@ strong {
 .nav__logo {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.25;
+  max-width: min(240px, 46vw);
   background: var(--gradient-main);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
 }
 
 .nav__links {
@@ -528,6 +530,35 @@ main {
 
 .card--about p:last-child {
   margin-bottom: 0;
+}
+
+.about-facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 24px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  list-style: none;
+}
+
+.about-facts__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.about-facts__icon {
+  flex-shrink: 0;
+  font-size: 1.35rem;
+  line-height: 1.4;
+}
+
+.about-facts__text {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text);
+  font-weight: 500;
 }
 
 .card__accent {
@@ -970,6 +1001,65 @@ main {
   color: var(--accent-blue);
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.legal-note--services-top {
+  margin: 0 0 16px;
+  text-align: left;
+}
+
+/* ===== Privacy notice (coding & legal) ===== */
+.privacy-notice {
+  margin-top: 32px;
+  padding: 32px 36px;
+}
+
+.privacy-notice__title {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  color: var(--heading);
+  margin-bottom: 16px;
+}
+
+.privacy-notice p {
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  line-height: 1.65;
+}
+
+.privacy-notice p:last-of-type {
+  margin-bottom: 20px;
+}
+
+.privacy-notice a {
+  color: var(--accent-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.privacy-notice__btn {
+  margin-top: 4px;
+}
+
+.privacy-notice__done {
+  margin-top: 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent-green);
+}
+
+.privacy-notice--acknowledged .privacy-notice__btn {
+  display: none;
+}
+
+.legal-doc__ack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
 }
 
 /* ===== Animations ===== */
@@ -1868,9 +1958,12 @@ body[data-page="services"] .service-offer__desc {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  align-items: start;
 }
 
 .tools-category {
+  height: auto;
+  align-self: start;
   padding: 20px 22px;
   background: rgba(255, 255, 255, 0.55);
   border: 1px solid var(--border);
@@ -1882,6 +1975,7 @@ body[data-page="services"] .service-offer__desc {
   font-size: 1.05rem;
   color: var(--heading);
   margin-bottom: 14px;
+  line-height: 1.25;
 }
 
 .tools-category__badges {
@@ -1950,6 +2044,11 @@ body[data-page="services"] .service-offer__desc {
     width: calc(100% - 40px);
     padding: 16px 0;
     z-index: 300;
+  }
+
+  .nav__logo {
+    font-size: 0.95rem;
+    max-width: min(200px, 52vw);
   }
 
   .nav__burger {
@@ -2354,6 +2453,13 @@ body[data-page="services"] .service-offer__desc {
   .card,
   .service-offer {
     padding: 28px 22px;
+  }
+
+  .about-facts {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 24px;
+    padding-top: 20px;
   }
 
   .service-offer__accent {
