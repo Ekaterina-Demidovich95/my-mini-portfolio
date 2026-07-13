@@ -31,11 +31,10 @@ if (burger && nav) {
   });
 
   nav.querySelectorAll('a').forEach((link) => {
-    const handleNavLeave = () => {
-      closeNav();
-    };
-    link.addEventListener('touchstart', handleNavLeave, { passive: true });
-    link.addEventListener('click', handleNavLeave);
+    link.addEventListener('click', () => {
+      // Закрываем после клика, чтобы не сорвать переход по ссылке на мобильных
+      requestAnimationFrame(closeNav);
+    });
   });
 
   document.addEventListener('click', (e) => {
